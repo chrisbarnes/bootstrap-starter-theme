@@ -3867,6 +3867,25 @@ a.list-group-item.active > .badge,
 body {
   padding-top: 60px;
 }
+a {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.wp-caption {
+  font-size: .85em;
+}
 .search-form label {
   font: 0/0 a;
   color: transparent;

@@ -97,6 +97,20 @@ function cbarnes_dev_main_nav() {
     );
 }
 
+// Change password protected form output
+
+add_filter( 'the_password_form', 'custom_password_form' );
+function custom_password_form() {
+	global $post;
+	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+	$o = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
+	' . __( "This post is password protected. To view it please enter your password below:" ) . '
+	<div class="input-group"><input name="post_password" id="' . $label . '" placeholder="' . esc_attr__( "Password" ) . '" type="password" size="20" /><span class="input-group-btn"><button type="submit" name="Submit" class="btn btn-default" />Go</button></span></div>
+	</form>
+	';
+	return $o;
+}
+
 /**
  * Enqueue scripts and styles
  */
